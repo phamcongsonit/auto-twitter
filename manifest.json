@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Auto Twitter",
+  "description": "Extension automatic follow and unfollow, like Twitter (Pham Cong Son)",
+  "version": "1.0",
+  "author":   [{
+    "name": "Pham Cong Son",
+    "email": "phamcongsonit@gmail.com"
+   }],
+  "browser_action": {
+    "default_icon": "icon_64x64.png",
+    "default_popup": "pcs.html"
+  },
+  "icons": { "16": "icon_16x16.png",
+     "64": "icon_64x64.png",
+    "128": "icon_128x128.png" },
+  "content_scripts": [
+    {
+      "matches": ["*://twitter.com/*"],
+      "js": ["jquery-1.11.3.min.js", "pcs.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
